@@ -1,3 +1,5 @@
+NOTE: This branch is the last commit before migrating to Next.js 13's app folder structure and won't be updated
+
 # LOGB Personality Test
 
 ## Live site
