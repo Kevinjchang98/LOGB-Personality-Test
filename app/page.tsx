@@ -235,7 +235,7 @@ export default function Home() {
                 <main className={styles.main}>
                     <FadeIn delay={20}>
                         <h1 className={styles.titleCentered}>
-                            LOGB Personality test
+                            LOGB Personality Test
                         </h1>
                         <p className={styles.mainCaption}>
                             Drag to reorder cards in each set of four to have

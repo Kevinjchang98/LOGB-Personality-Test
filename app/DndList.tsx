@@ -60,16 +60,6 @@ export default function DndList({
         }
     }, []);
 
-    // const onNext = () => {
-    //     setScores((prev: Array<Array<Number>>) => {
-    //         for (let i = 0; i < state.length; i++) {
-    //             // @ts-ignore
-    //             prev[index][personalityScoreIndex[state[i].category]] += 4 - i;
-    //         }
-    //         return prev;
-    //     });
-    // };
-
     useEffect(() => {
         setScores((prev: Array<Array<number>>) => {
             const newScores = [...prev];
