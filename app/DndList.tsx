@@ -123,7 +123,6 @@ export default function DndList({
                     </Droppable>
                 ) : null}
             </DragDropContext>
-            {/* <button onClick={onNext}>Next</button> */}
         </>
     );
 }
