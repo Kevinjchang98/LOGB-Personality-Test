@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '../../../styles/Home.module.css';
+import styles from '../../Home.module.css';
 import FadeIn from 'react-fade-in';
 
 export default function GoldenRetriever() {

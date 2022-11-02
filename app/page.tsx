@@ -2,7 +2,7 @@
 
 import Head from 'next/head';
 import { useState } from 'react';
-import styles from '../styles/Home.module.css';
+import styles from './Home.module.css';
 import DndList from './DndList';
 import Scores from './Scores';
 import FadeIn from 'react-fade-in';
