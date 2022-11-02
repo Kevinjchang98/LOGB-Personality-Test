@@ -55,12 +55,6 @@
     max-width: calc(70% - 1rem);
 }
 
-.title {
-    margin: 0;
-    line-height: 1.15;
-    font-size: 4rem;
-}
-
 .dndContainer {
     margin: auto;
     width: clamp(250px, 100%, 700px);
