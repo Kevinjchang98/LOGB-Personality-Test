@@ -23,6 +23,13 @@
     text-align: justify;
 }
 
+.titleCentered {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
+    text-align: center;
+}
+
 .main {
     min-height: 100vh;
     padding: 4rem 0;
@@ -31,28 +38,6 @@
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-}
-
-.descriptionColumnsContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.descriptionList {
-    margin: 1rem;
-    max-width: 50%;
-}
-
-.descriptionLeftHeader {
-    width: 30%;
-    margin-right: 1rem;
-    align-items: left;
-}
-
-.descriptionRightContent {
-    align-items: left;
-    max-width: calc(70% - 1rem);
 }
 
 .dndContainer {
