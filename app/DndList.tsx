@@ -109,30 +109,28 @@ export default function DndList({
     ));
 
     return (
-        <>
-            <DragDropContext
-                onDragEnd={({ destination, source }) =>
-                    handlers.reorder({
-                        from: source.index,
-                        to: destination?.index || 0,
-                    })
-                }
-            >
-                {/* Only render cards if we're in a browser */}
-                {isBrowser ? (
-                    <Droppable droppableId="dnd-list" direction="vertical">
-                        {(provided) => (
-                            <div
-                                {...provided.droppableProps}
-                                ref={provided.innerRef}
-                            >
-                                {items}
-                                {provided.placeholder}
-                            </div>
-                        )}
-                    </Droppable>
-                ) : null}
-            </DragDropContext>
-        </>
+        <DragDropContext
+            onDragEnd={({ destination, source }) =>
+                handlers.reorder({
+                    from: source.index,
+                    to: destination?.index || 0,
+                })
+            }
+        >
+            {/* Only render cards if we're in a browser */}
+            {isBrowser ? (
+                <Droppable droppableId="dnd-list" direction="vertical">
+                    {(provided) => (
+                        <div
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                        >
+                            {items}
+                            {provided.placeholder}
+                        </div>
+                    )}
+                </Droppable>
+            ) : null}
+        </DragDropContext>
     );
 }
