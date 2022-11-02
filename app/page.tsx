@@ -2,9 +2,9 @@
 
 import Head from 'next/head';
 import { useState } from 'react';
-import styles from '../styles/Home.module.css';
-import DndList from './DndList';
-import Scores from './Scores';
+import styles from './Home.module.css';
+import DndList from '../components/DndList/DndList';
+import Scores from '../components/Scores/Scores';
 import FadeIn from 'react-fade-in';
 import data from '../public/questions.json';
 
@@ -63,9 +63,11 @@ export default function Home() {
                             relatable card at the bottom
                         </p>
                         <div className={styles.dndContainer}>
-                            <FadeIn delay={100}>{questions}</FadeIn>
+                            <FadeIn delay={100}>
+                                {questions}
 
-                            <Scores scores={scores} />
+                                <Scores scores={scores} />
+                            </FadeIn>
                         </div>
                     </FadeIn>
                 </main>

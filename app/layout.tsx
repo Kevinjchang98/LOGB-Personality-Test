@@ -1,5 +1,5 @@
-import '../styles/globals.css';
-import Footer from './Footer';
+import './globals.css';
+import Footer from '../components/Footer/Footer';
 
 /**
  * Imports global css styles and renders a footer on all pages for this site

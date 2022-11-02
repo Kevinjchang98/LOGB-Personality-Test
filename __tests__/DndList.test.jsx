@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import DndList from '../app/DndList';
+import DndList from '../components/DndList/DndList';
 import '@testing-library/jest-dom';
 
 describe('DndList', () => {

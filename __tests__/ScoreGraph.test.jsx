@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import ScoreGraph from '../app/ScoreGraph';
+import ScoreGraph from '../components/ScoreGraph/ScoreGraph';
 import '@testing-library/jest-dom';
 
 describe('ScoreGraph', () => {

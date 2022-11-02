@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from '../styles/Home.module.css';
-import ScoreGraph from '../app/ScoreGraph';
+import homeStyles from '../../app/Home.module.css';
+import styles from './Scores.module.css';
+import ScoreGraph from '../ScoreGraph/ScoreGraph';
 
 interface ScoresProps {
     scores: Array<Array<number>>;
@@ -51,11 +52,11 @@ export default function Scores({ scores }: ScoresProps) {
 
     return (
         <div className={styles.scoresContainer}>
-            <h1 className={styles.title}>Scores</h1>
+            <h1 className={homeStyles.title}>Scores</h1>
 
             <ScoreGraph data={scoreSum} />
 
-            <h2 className={styles.subTitle}>{Categories[primaryCategory]}</h2>
+            <h2>{Categories[primaryCategory]}</h2>
 
             {/* Assumes detail page's url is /details/{lowercase animal name with no spaces} */}
             <a
