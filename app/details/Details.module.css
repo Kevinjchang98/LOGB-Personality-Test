@@ -1,0 +1,39 @@
+.container {
+    padding: 0 2rem;
+    background-color: #ffffff;
+    box-shadow: -5px 5px 38px #dbdbdb, 5px -5px 38px #ffffff;
+    pointer-events: auto;
+}
+
+.description {
+    max-width: 700px;
+    padding: 2rem 0;
+    margin: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.descriptionColumnsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.descriptionList {
+    margin: 1rem;
+    max-width: 50%;
+}
+
+.descriptionLeftHeader {
+    width: 30%;
+    margin-right: 1rem;
+    align-items: left;
+}
+
+.descriptionRightContent {
+    align-items: left;
+    max-width: calc(70% - 1rem);
+}
