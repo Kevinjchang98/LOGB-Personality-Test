@@ -9,6 +9,7 @@ import FadeIn from 'react-fade-in';
 import data from '../public/questions.json';
 
 export default function Home() {
+    // Scores array for every question
     const [scores, setScores] = useState<Array<Array<number>>>([
         [0, 0, 0, 0],
         [0, 0, 0, 0],
@@ -22,6 +23,7 @@ export default function Home() {
         [0, 0, 0, 0],
     ]);
 
+    // Each set of questions cards to be rendered
     const questions = data.map((q: Array<any>, i: number) => {
         return (
             <div key={i}>
