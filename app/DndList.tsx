@@ -5,6 +5,7 @@ import { useListState } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
+// Mantine way to style its components
 const useStyles = createStyles((theme) => ({
     item: {
         ...theme.fn.focusStyles(),
@@ -38,6 +39,7 @@ interface DndListProps {
     questionIndex: number;
 }
 
+// Used to index scores array
 enum personalityScoreIndex {
     L = 0,
     O = 1,
@@ -51,19 +53,25 @@ export default function DndList({
     questionIndex,
 }: DndListProps) {
     const { classes, cx } = useStyles();
+    // State of dnd list
     const [state, handlers] = useListState(data);
+    // If currently rendered in browser
     const [isBrowser, setIsBrowser] = useState(false);
 
+    // If currently browser, set isBrowser
     useEffect(() => {
         if (typeof window !== 'undefined') {
             setIsBrowser(true);
         }
     }, []);
 
+    // Update scores array every time cards have been moved
     useEffect(() => {
         setScores((prev: Array<Array<number>>) => {
+            // Copy previous scores
             const newScores = [...prev];
 
+            // Modify this question's scores to be new scores
             for (let i = 0; i < state.length; i++) {
                 newScores[questionIndex][
                     // @ts-ignore
@@ -75,6 +83,7 @@ export default function DndList({
         });
     }, [state]);
 
+    // Cards to be rendered
     const items = state.map((item, index) => (
         <Draggable
             key={item.category + questionIndex}
@@ -100,30 +109,28 @@ export default function DndList({
     ));
 
     return (
-        <>
-            <DragDropContext
-                onDragEnd={({ destination, source }) =>
-                    handlers.reorder({
-                        from: source.index,
-                        to: destination?.index || 0,
-                    })
-                }
-            >
-                {isBrowser ? (
-                    <Droppable droppableId="dnd-list" direction="vertical">
-                        {(provided) => (
-                            <div
-                                {...provided.droppableProps}
-                                ref={provided.innerRef}
-                            >
-                                {items}
-                                {provided.placeholder}
-                            </div>
-                        )}
-                    </Droppable>
-                ) : null}
-            </DragDropContext>
-            {/* <button onClick={onNext}>Next</button> */}
-        </>
+        <DragDropContext
+            onDragEnd={({ destination, source }) =>
+                handlers.reorder({
+                    from: source.index,
+                    to: destination?.index || 0,
+                })
+            }
+        >
+            {/* Only render cards if we're in a browser */}
+            {isBrowser ? (
+                <Droppable droppableId="dnd-list" direction="vertical">
+                    {(provided) => (
+                        <div
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                        >
+                            {items}
+                            {provided.placeholder}
+                        </div>
+                    )}
+                </Droppable>
+            ) : null}
+        </DragDropContext>
     );
 }

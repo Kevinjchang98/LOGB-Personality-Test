@@ -8,6 +8,7 @@ interface ScoresProps {
     scores: Array<Array<number>>;
 }
 
+// Ordering of animals for score array
 enum Categories {
     'Lion' = 0,
     'Otter' = 1,
@@ -16,11 +17,15 @@ enum Categories {
 }
 
 export default function Scores({ scores }: ScoresProps) {
+    // Sum of scores per animal; ordered as defined in enum Categories
     const [scoreSum, setScoreSum] = useState<Array<number>>([0, 0, 0, 0]);
+    // Primary animal the current user is based on max score
+    // TODO: Consider allowing multiple if a tie exists
     const [primaryCategory, setPrimaryCategory] = useState<Categories>(
         Categories['Lion']
     );
 
+    // Recalculate whenever scores changes
     useEffect(() => {
         let newScoreSum = [0, 0, 0, 0];
 
@@ -52,6 +57,7 @@ export default function Scores({ scores }: ScoresProps) {
 
             <h2 className={styles.subTitle}>{Categories[primaryCategory]}</h2>
 
+            {/* Assumes detail page's url is /details/{lowercase animal name with no spaces} */}
             <a
                 href={
                     'details/' +
