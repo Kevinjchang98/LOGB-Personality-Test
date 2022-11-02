@@ -3,8 +3,8 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './Home.module.css';
-import DndList from './DndList';
-import Scores from './Scores';
+import DndList from '../components/DndList/DndList';
+import Scores from '../components/Scores/Scores';
 import FadeIn from 'react-fade-in';
 import data from '../public/questions.json';
 
