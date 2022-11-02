@@ -63,9 +63,11 @@ export default function Home() {
                             relatable card at the bottom
                         </p>
                         <div className={styles.dndContainer}>
-                            <FadeIn delay={100}>{questions}</FadeIn>
+                            <FadeIn delay={100}>
+                                {questions}
 
-                            <Scores scores={scores} />
+                                <Scores scores={scores} />
+                            </FadeIn>
                         </div>
                     </FadeIn>
                 </main>
